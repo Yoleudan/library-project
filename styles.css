@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pop-up{
+}
+
+#formContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#addBookBtn{
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    margin-top: 30px;
+}
+
+th{
+    width: 300px;
+}
+
+#tableHolder{
+    margin-top: 100px;
+}
+
+#libraryTable{
+    outline: 1px solid;
+}

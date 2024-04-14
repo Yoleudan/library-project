@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library-Project</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./main.js" defer></script>
+</head>
+<body class="container">
+    <button type="button" id="addBookBtn" onclick=openForm()>Add Book!</button>
+    <dialog id="pop-up">
+        <form id="formContainer">
+            <label for="bookName">Book Title</label>
+            <input type="text" id="bookName" name="bookName">
+            <label for="bookAuthor">Author</label>
+            <input type="text" id="bookAuthor" name="bookAuthor">
+            <label for="pageCount">How many pages?</label>
+            <input type="tel" id="pageCount" name="pageCount">
+            <button type="button" id="registerBook" onclick="closeForm()">Register Book!</button>
+        </form>
+    </dialog>
+    <div id="tableHolder">
+        <table id="libraryTable">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>No. Pages</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

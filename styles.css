@@ -38,6 +38,12 @@ th{
     width: 300px;
 }
 
+td{
+    text-align: center;
+    border-top: 1px solid;
+    border-width: 100%;
+}
+
 #tableHolder{
     margin-top: 120px;
 }

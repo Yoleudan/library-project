@@ -8,16 +8,16 @@
     <script src="./main.js" defer></script>
 </head>
 <body class="container">
-    <button type="button" id="addBookBtn" onclick=openForm()>Add Book!</button>
+    <button type="button" id="addBookBtn">Add Book!</button>
     <dialog id="pop-up">
         <form id="formContainer">
-            <label for="bookName">Book Title</label>
-            <input type="text" id="bookName" name="bookName">
+            <label for="bookTitle">Book Title</label>
+            <input type="text" id="bookTitle" name="bookTitle">
             <label for="bookAuthor">Author</label>
             <input type="text" id="bookAuthor" name="bookAuthor">
             <label for="pageCount">How many pages?</label>
             <input type="tel" id="pageCount" name="pageCount">
-            <button type="button" id="registerBook" onclick="closeForm()">Register Book!</button>
+            <button type="button" id="registerBook">Register Book!</button>
         </form>
     </dialog>
     <div id="tableHolder">
@@ -26,6 +26,13 @@
                 <th>Title</th>
                 <th>Author</th>
                 <th>No. Pages</th>
+                <th>Read?</th>
+            </tr>
+            <tr>
+                <td>Hobbit</td>
+                <td>Tolkien</td>
+                <td>305</td>
+                <td><button>Read?</button></td>
             </tr>
         </table>
     </div>

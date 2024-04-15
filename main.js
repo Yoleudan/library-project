@@ -36,16 +36,26 @@ function showLibrary(){
     console.log(library[0].title)
 }
 
+function checkValid(){
+    getBookInfo();
+    if (bookTitle && bookAuthor && pages !== ""){
+        submit.addEventListener("click", addBookToLibrary);
+        submit.addEventListener("click", addNewRow);
+        submit.addEventListener("click", showLibrary);
+        submit.addEventListener("click", addToI);
+        submit.addEventListener("click", closeForm);
+    }
+    else{
+        alert("please fill in all fields!")
+    }
+}
+
 let openBtn = document.querySelector('#addBookBtn')
 openBtn.addEventListener("click", openForm);
 
 let submit = document.querySelector('#registerBook')
-submit.addEventListener("click", closeForm);
-submit.addEventListener("click", getBookInfo);
-submit.addEventListener("click", addBookToLibrary);
-submit.addEventListener("click", addNewRow);
-submit.addEventListener("click", showLibrary);
-submit.addEventListener("click", addToI);
+submit.addEventListener("click", checkValid);
+
 
 let table = document.querySelector('#libraryTable')
 

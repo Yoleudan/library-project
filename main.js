@@ -52,10 +52,12 @@ let table = document.querySelector('#libraryTable')
 function toggleRead(){
     button = document.querySelector('#' + this.id)
     if(button.style.backgroundColor == "red"){
+        button.textContent = "Yes"
         button.style.color = "white"
         button.style.backgroundColor = "green";
     }
     else if(button.style.backgroundColor == "green"){
+        button.textContent = "No"
         button.style.backgroundColor = "red";
     }
 }
@@ -66,9 +68,19 @@ function addToI(){
     return i++
 }
 
+function deleteRow(e) {
+    if (e.target.tagName === "BUTTON") {
+        e.target.closest("tr").remove();
+    }
+}
+
+
+
+
 function addNewRow(){
     if ( bookTitle || bookAuthor || pages !== ""){
         let newRow = table.insertRow(-1);
+        newRow.id = "newRow" + i
         let newCell1 = newRow.insertCell(0);
         let newText1 = document.createTextNode(library[i].title);
         newCell1.appendChild(newText1);
@@ -82,10 +94,16 @@ function addNewRow(){
         let newRead = document.createElement("button");
         newRead.style.backgroundColor = "red";
         newRead.style.color = "white"
-        newRead.textContent = "Read"
+        newRead.textContent = "No"
         newRead.id = "read" + i
         newRead.addEventListener("click", toggleRead)
         newCell4.appendChild(newRead);
+        let newCell5 = newRow.insertCell(4);
+        let newDelete = document.createElement("button");
+        newDelete.textContent = "X"
+        newDelete.id = "delete" + i
+        newDelete.addEventListener("click", deleteRow);
+        newCell5.appendChild(newDelete)
     }
     else{
         alert("Please fill in all fields!")
